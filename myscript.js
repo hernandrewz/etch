@@ -1,29 +1,21 @@
 const square = document.createElement("div");
-
 square.setAttribute("id", "container");
+square.setAttribute("class", "wrap")
+const grabSquare = document.getElementById("container");
+
+
 
 const changeButton = document.createElement("button");
-
 changeButton.setAttribute("id", "buttonOne");
-
 changeButton.innerText = "change it";
 
 
-
-
-
 document.body.appendChild(changeButton); 
-
 document.body.appendChild(square);
 
 const canvas = document.getElementById("container");
 
 document.getElementById("buttonOne").addEventListener("click", askUser);
-
-function askUser() { 
-    prompt("choose the dimensions of the square grid");
-
-}
 
 
 
@@ -33,11 +25,12 @@ function makeRows(rows, cols,) {
     canvas.style.setProperty('--grid-cols', cols);
     for ( let c = 0; c < (rows * cols); c++) {
         let cell = document.createElement("div");
-        
         cell.innerText = (c + 1); 
         container.appendChild(cell).className = "grid-item";
         cell.setAttribute("id", "cellS");
         const cellAdds = document.querySelectorAll(".grid-item");
+        
+        
         
         cellAdds.forEach (cellAdd => {
             cellAdd.addEventListener("mouseover", function () {
@@ -70,7 +63,28 @@ function makeRows(rows, cols,) {
     
     
 
-makeRows(16, 16);
+
+     makeRows(16, 16)
+
+
+
+function askUser() { 
+    const answer = parseInt(prompt("choose the dimensions of the square grid"));
+    const  grabCells = document.querySelectorAll(".grid-item");
+    const grabWrap = document.querySelectorAll(".wrap");
+   
+    
+    if ( answer <= 100) { 
+        document.querySelectorAll(".grid-item").forEach(e=>e.remove());
+        return makeRows(answer, answer);
+    }
+    }
+    
+    
+
+
+
+
 
 function mouseOver(e) {
     const bgColor = 'blue';
