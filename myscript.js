@@ -2,14 +2,28 @@ const square = document.createElement("div");
 
 square.setAttribute("id", "container");
 
+const changeButton = document.createElement("button");
+
+changeButton.setAttribute("id", "buttonOne");
+
+changeButton.innerText = "change it";
 
 
-    
 
+
+
+document.body.appendChild(changeButton); 
 
 document.body.appendChild(square);
 
 const canvas = document.getElementById("container");
+
+document.getElementById("buttonOne").addEventListener("click", askUser);
+
+function askUser() { 
+    prompt("choose the dimensions of the square grid");
+
+}
 
 
 
