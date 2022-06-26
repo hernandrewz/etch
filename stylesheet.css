@@ -19,6 +19,14 @@
     border-style: solid;
     border-color: crimson;
     text-align: center;
+    background-color: yellow;
+}
+
+
+
+
+.opClass {
+    opacity:.1
 }
 
 #buttonOne {display: flex;

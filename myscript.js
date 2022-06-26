@@ -17,7 +17,15 @@ const canvas = document.getElementById("container");
 
 document.getElementById("buttonOne").addEventListener("click", askUser);
 
-
+function randomBgColor() {
+    const x = Math.floor(Math.random()* 256);
+    const y = Math.floor(Math.random()* 256);
+    const z = Math.floor(Math.random()* 256); 
+    const bgColor = "rgb(" + x + "," + y + "," + z + ")";
+    console.log(bgColor); 
+    return bgColor;
+    
+}
 
 
 function makeRows(rows, cols,) {
@@ -30,23 +38,36 @@ function makeRows(rows, cols,) {
         cell.setAttribute("id", "cellS");
         const cellAdds = document.querySelectorAll(".grid-item");
         
-        
+    
         
         cellAdds.forEach (cellAdd => {
             cellAdd.addEventListener("mouseover", function () {
-                cellAdd.style.backgroundColor = "blue";
+                cellAdd.style.backgroundColor = randomBgColor();
+                
+                
             });
             })
         
+
         cellAdds.forEach (cellAdd => {
-            cellAdd.addEventListener("mouseout", function () {
-                cellAdd.style.backgroundColor = "white";
-            });
-            })
+                cellAdd.addEventListener("mouseover", function () {
+                    cellAdd.style.opacity -= "-0.1";
+                });
+                })
+
+
+
+        //cellAdds.forEach //(cellAdd => {
+            
+        //cellAdd.addEventListener("mouseout", function () {
+         //       cellAdd.style.backgroundColor = "white";
+           // });
+            //})
         }
             
         }
-    
+
+        
 
         
         
@@ -98,6 +119,3 @@ function mouseOut(e){
     var elements = document.getElementsByClassName("grid-item"); 
     for(var i = 0; i < elements.length; i++) {
         elements[i].style.backgroundColor = "black";}}
-
-
-        
