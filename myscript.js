@@ -14,7 +14,7 @@ document.body.appendChild(changeButton);
 document.body.appendChild(square);
 
 const canvas = document.getElementById("container");
-
+const wrapper = document.querySelector(".wrap");
 document.getElementById("buttonOne").addEventListener("click", askUser);
 
 function randomBgColor() {
@@ -25,6 +25,11 @@ function randomBgColor() {
     console.log(bgColor); 
     return bgColor;
     
+}
+
+function increaseOpacity( ){
+    const more = this.style.opacity -= '-0.1';
+    return more; 
 }
 
 
@@ -38,24 +43,26 @@ function makeRows(rows, cols,) {
         cell.setAttribute("id", "cellS");
         const cellAdds = document.querySelectorAll(".grid-item");
         
+
+    
+
     
         
         cellAdds.forEach (cellAdd => {
             cellAdd.addEventListener("mouseover", function () {
-                cellAdd.style.backgroundColor = randomBgColor();
+                cellAdd.style.backgroundColor = "black";
+                //cellAdd.style.opacity -= "-0.1";
+                
                 
                 
             });
             })
         
+            wrapper.addEventListener("mouseover", event =>
+            event.target.style.backgroundColor = increaseOpacity());
 
-        cellAdds.forEach (cellAdd => {
-                cellAdd.addEventListener("mouseover", function () {
-                    cellAdd.style.opacity -= "-0.1";
-                });
-                })
-
-
+    
+    
 
         //cellAdds.forEach //(cellAdd => {
             
