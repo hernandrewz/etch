@@ -10,6 +10,8 @@
     text-align: center;
     background-color: orange;
     opacity: 0;
+    width: calc(960px/var(--grid-cols));
+    height: calc(960px/var(--grid-rows));
    
    
   
