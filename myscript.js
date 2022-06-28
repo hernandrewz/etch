@@ -35,7 +35,7 @@ function makeRows(rows, cols,) {
         let cell = document.createElement("div");
         //cell.innerText = (c + 1); 
         container.appendChild(cell).className = "grid-item";
-        cell.setAttribute("id", "cellS");
+        cell.setAttribute("id", "smallCells");
         
         
         const cellAdds = document.querySelectorAll(".grid-item");
