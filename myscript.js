@@ -9,12 +9,12 @@ const changeButton = document.createElement("button");
 changeButton.setAttribute("id", "buttonOne");
 changeButton.innerText = "change it";
 
-
 document.body.appendChild(changeButton); 
 document.body.appendChild(square);
 
 const canvas = document.getElementById("container");
 const wrapper = document.querySelector(".wrap");
+
 document.getElementById("buttonOne").addEventListener("click", askUser);
 
 function randomBgColor() {
@@ -27,12 +27,6 @@ function randomBgColor() {
     
 }
 
-function increaseOpacity( ){
-    const more = this.style.opacity -= '-0.1';
-    return more; 
-}
-
-
 function makeRows(rows, cols,) {
     canvas.style.setProperty('--grid-rows', rows);
     canvas.style.setProperty('--grid-cols', cols);
@@ -41,26 +35,30 @@ function makeRows(rows, cols,) {
         cell.innerText = (c + 1); 
         container.appendChild(cell).className = "grid-item";
         cell.setAttribute("id", "cellS");
+        
+        
         const cellAdds = document.querySelectorAll(".grid-item");
         
+        wrapper.addEventListener("mouseover", event =>
+        event.target.style.opacity -= "-0.0004");
+        console.log(this);
 
+       
     
 
     
         
-        cellAdds.forEach (cellAdd => {
-            cellAdd.addEventListener("mouseover", function () {
-                cellAdd.style.backgroundColor = "black";
-                //cellAdd.style.opacity -= "-0.1";
+        //cellAdds.forEach (cellAdd => {
+          //  cellAdd.addEventListener("mouseover", function () {
+              //  cellAdd.style.backgroundColor = "black";
+             //   cellAdd.style.opacity -= "-0.1";
                 
                 
                 
-            });
-            })
+         //   });
+          //  })
         
-            wrapper.addEventListener("mouseover", event =>
-            event.target.style.backgroundColor = increaseOpacity());
-
+           
     
     
 
@@ -74,25 +72,7 @@ function makeRows(rows, cols,) {
             
         }
 
-        
-
-        
-        
-        
-        
-    
-       
-
-
-       
-     
-        
-    
-    
-    
-
-
-     makeRows(16, 16)
+ makeRows(16, 16)
 
 
 
@@ -114,15 +94,3 @@ function askUser() {
 
 
 
-function mouseOver(e) {
-    const bgColor = 'blue';
-   e.target.style.backgroundColor = bgColor;
-  
-   console.log(this)
-   }
-
-
-function mouseOut(e){ 
-    var elements = document.getElementsByClassName("grid-item"); 
-    for(var i = 0; i < elements.length; i++) {
-        elements[i].style.backgroundColor = "black";}}
