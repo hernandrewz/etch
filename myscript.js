@@ -38,7 +38,7 @@ function makeRows(rows, cols,) {
         
         
         const cellAdds = document.querySelectorAll(".grid-item");
-        
+       
         wrapper.addEventListener("mouseover", event =>
         event.target.style.opacity -= "-0.0004");
         console.log(this);

@@ -1,17 +1,16 @@
 :root {
-    --grid-cols: 1; 
-    --grid-rows: 1;
+    --grid-cols: 1, 1fr ;
+    --grid-rows: 1, 1fr;
 }
 
 .grid-item { 
-    padding: 1em;
+    padding: 0;
     border-style: solid;
     border-color: crimson;
     text-align: center;
     background-color: orange;
     opacity: 0;
-  
-    
+   
    
   
     
@@ -23,8 +22,9 @@
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
 ;  background-color: blue;
-    height: max-content; 
-    width: max-content;
+    height: auto; 
+    width: 960px;
+    position: relative;
 }
 
 
